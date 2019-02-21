@@ -386,3 +386,81 @@
 
 
 
+/* Built - in Iteratore */
+
+// you can create your own iterator if only you require it is in class or object
+//ES6 has three types of collection.arrays,mapsand sets
+
+// let arr = [1,2,3,4,5,6];
+// console.log(arr.entries((val)=>{
+// return val
+// }))
+// entries return the key value pair
+// values return the value 
+// let colors = ["red","green","blue"];
+// let tracking = new Set([1234,5678,9012]);
+// let data = new Map();
+
+// data.set("title","Understanding ECMASCRIPT 6");
+// data.set("format","ebook");
+// for(let entry of 
+// colors.values()    
+//     // colors.entries()
+// ){
+//     console.log(entry);
+
+// }
+// for(let entry of 
+// tracking.values()    
+//     // tracking.entries()
+// ){
+//     console.log(entry);
+// }
+// for(let entry of 
+// data.values()    
+//     // data.entries()
+// ){
+//     console.log(entry)
+// }
+// var message = "A 𠮷 B";
+// // for (let i=0; i < message.length; i++) {
+// //     console.log(message[i]);
+// //    }
+
+// for(let c of message){
+//     console.log(c)
+// }
+
+// var divs = document.getElementsByTagName("div");
+
+// for(let div of divs){
+//     console.log(div.id)
+// }
+
+
+
+// let set = new Set([1,2,2,3,4,5,3,3]),
+// array=[...set];
+// console.log(array)
+
+// let map = new Map([["name","Nicholas"],["age",25]]),
+// array=[...map];
+// console.log(array)
+// let smallNumber = [1,2,3],
+// bigNumbers = [100,101,102],
+// allNumbers = [0,...smallNumber,...bigNumbers];
+
+// console.log(allNumbers)
+
+
+/* Passing arguments to iterator */
+function *createIterator(){
+    let first = yield 1;
+    let second = yield first +2;
+    yield second+3;
+}
+let iterator = createIterator();
+console.log(iterator.next());
+console.log(iterator.next(4));
+console.log(iterator.next(5));
+console.log(iterator.next());
